@@ -1,21 +1,23 @@
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from config import TOKEN
 
 
 bot = Bot(token=TOKEN)
-dp = Dispatcher(bot)
+
+dp = Dispatcher(bot, storage=MemoryStorage())
 
 
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
-    await message.reply("Hi!\nWrite me smthing!")
+    await message.reply("Hi!!")
 
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
-    await message.reply("Write me smthing and I will send you this text!")
+    await message.reply("Help!!")
 
 @dp.message_handler(commands=['voice'])
 async def process_help_command(message: types.Message):
@@ -31,7 +33,7 @@ async def process_help_command(message: types.Message):
 
 @dp.message_handler(commands=['file'])
 async def process_help_command(message: types.Message):
-    await message.reply("File!!")    
+    await message.reply("File!!")
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
