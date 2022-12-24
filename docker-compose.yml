@@ -4,7 +4,7 @@ services:
     image: "my_image:latest"
     command: "python3 /usr/src/app/main.py"
     environment:
-      - API_TOKEN='5938594218:AAGgcU-veWApPiRUOImEojEPXb_VuPKx_2o'
+      - TOKEN=${TOKEN}
   shit_box:
     image: "python:3"
 networks:
