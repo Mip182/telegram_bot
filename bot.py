@@ -2,9 +2,10 @@ from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.dispatcher import FSMContext
+import os
 
-from config import TOKEN
-
+TOKEN = os.getenv('TOKEN')
 
 bot = Bot(token=TOKEN)
 
